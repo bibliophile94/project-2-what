@@ -1,6 +1,16 @@
 var textarea = document.getElementById('what');
 var replyarea = document.getElementById('result');
 var form = document.getElementsByTagName('form')[0];
+var answers = ["The outcome you desire is most unlikely",
+"I wouldn't get your hopes up",
+"Realistically...no.",
+"I mean, you can hope for the best, right?",
+"Are you for real?",
+"I find your naievité charming",
+"The future is unclear.",
+"[Stares at you in abject horror]"]
+var answer = answers[Math.floor(Math.random()*answers.length)];
+
 textarea.addEventListener('change', function() {
     form.submit();
 }, false);
@@ -13,7 +23,7 @@ what = what.toLowerCase();
 what = what.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~'" ?|()]/g,"")
 
 if (what == "willimeettheone")
-replyarea.value = "You will die emotionally alone";
+replyarea.value = "You will die emotionally alone.";
 else if (what == "willipassdansclass")
 replyarea.value = "With a project like this? Unlikely.";
 else if (what == "willigetrich")
@@ -26,7 +36,6 @@ else if (what == "")
 	replyarea.value = "";
 else if (what == "willtrumpwintheelection")
 	replyarea.value = "With our luck? Probably.";
-
 else
-	replyarea.value = "Probably not";
+	replyarea.value = answer;
 	
